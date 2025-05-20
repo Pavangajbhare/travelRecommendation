@@ -1,10 +1,13 @@
 const resultdiv = document.getElementById("result");
 const searchBtn = document.getElementById("searchBtn");
-const resultBtn = document.getElementById("resetBtn");
-
+const resetBtn = document.getElementById("resetBtn");
+const main = document.querySelector("main")
 function getResults() {
-    const searchKey = document.getElementById("searchBar").value.toLowerCase();
+    if (!main.contains(resultdiv)) {
+        main.appendChild(resultdiv);
+    }
     resultdiv.innerHTML = "";
+    const searchKey = document.getElementById("searchBar").value.toLowerCase();
     fetch('./travel_recommendation_api.json')
     .then(response => response.json())
     .then(data => {
@@ -51,8 +54,13 @@ function getResults() {
 };
 
 function resetResults() {
-    resultdiv.innerHTML="";
+    const searchKey = document.getElementById("searchBar");
+    searchKey.value = "";
+    resultdiv.innerHTML = ""; // Just clear the content
+    if (main.contains(resultdiv)) {
+        main.removeChild(resultdiv); // Optional: remove from DOM if needed
+    }
 }
 
 searchBtn.addEventListener('click', getResults);
-resultBtn.addEventListener('click', resetResults);
+resetBtn.addEventListener('click', resetResults);

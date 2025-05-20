@@ -166,23 +166,29 @@ header {
     justify-content: center;
     align-items: center;
     height: max-content;
-    background-color: rgb(6, 206, 139);
+    background-color: rgb(4, 161, 109);
     color: var(--title-color);
     font-size: var(--body-font);
     padding: 0.5rem 1rem;
-    border: 2px solid white;
+    border: 1px solid white;
     border-radius: 0.75rem;
 }
 
 #searchBtn:hover, #resetBtn:hover {
-    background-color: rgba(6, 206, 139, 0.9);
+    background-color: rgba(4, 161, 109, 0.849);
 }
 
-.main {
+#searchBar:hover, #searchBar:focus {
+    background-color: hsla(0, 0%, 100%, 0.091);;
+}
+
+main {
     position: relative;
     min-height: 100vh;
     padding-top: 4rem;
     row-gap: 3rem;
+    display: flex;
+    flex-direction: row;
 }
 
 .main-bg {
@@ -218,11 +224,12 @@ header {
     color: var(--title-color);
     font-family: var(--body-font);
     margin: 1rem 0 0 3rem;
-    width: 75%;
+    width: 55%;
 }
 
 #book {
-    margin: 1rem 0 0 3rem;
+    height: 10rem;
+    width: 10rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -231,5 +238,16 @@ header {
 }
 
 #book:hover {
-    background-color: hsla(0, 0%, 100%, 0.215);
+    background: radial-gradient(ellipse closest-side at center, hsla(0, 0%, 100%, 0.614), hsla(0, 0%, 100%, 0)60%);
+    font-style: italic;
+}
+
+#result {
+    margin-right: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: inherit;
+    background-color: var(--container-color);
+    font-family: var(--body-font);
+    color: var(--text-color-light);
 }
