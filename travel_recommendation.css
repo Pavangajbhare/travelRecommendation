@@ -12,9 +12,9 @@
     --body-font: "Poppins", sans-serif;
     --second-font: "Montserrat", sans-serif;
     --large-font--size: 2.75rem;
-    --h1-font-size: 1.5rem;
-    --h2-font-size: 1.25rem;
-    --h3-font-size: 1rem;
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.75rem;
+    --h3-font-size: 1.25rem;
     --normal-font-size: 0.938rem;
     --small-font-size: 0.815rem;
     --smaller-font-size: 0.75rem;
@@ -46,7 +46,7 @@ body, button, input {
 
 body {
     background-color: var(--body-color);
-    max-height: 100vh;
+    overflow: hidden;
 }
 
 button, input {
@@ -86,10 +86,6 @@ img {
     gap: 1.5rem;
 }
 
-.main {
-    overflow: hidden;
-}
-
 .section {
     padding-block: 5rem 1rem;
 }
@@ -97,7 +93,7 @@ img {
 header {
     position: fixed;
     width: 100%;
-    background-color: transparent;
+    background-color: black;
     top: 0;
     left: 0;
     z-index: var(--z-fixed);
@@ -185,19 +181,20 @@ header {
 
 main {
     position: relative;
-    min-height: 100vh;
+    height: 100vh;
     padding-top: 4rem;
     row-gap: 3rem;
     display: flex;
     flex-direction: row;
+    overflow-y: hidden;
 }
-
 .main-bg {
+    display: block;
     position: absolute;
     top: 4rem;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: auto;
     object-fit: cover;
     object-position: center;
     z-index: -2;
@@ -205,6 +202,7 @@ main {
 
 .main-shadow{
     position: absolute;
+    display: block;
     top: 0;
     left: 0;
     width: 100%;
@@ -243,42 +241,74 @@ main {
     font-style: italic;
 }
 
+
 #result {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    height: max-content;
-    gap: 1rem;
-    overflow: hidden;
-    margin-right: 0.5rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    padding-top: 3rem;
-    padding-bottom: 2rem;
-    border-bottom-left-radius: 1.5rem;
-    border-bottom-right-radius: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive columns */
+    gap: 2rem;
+    width: 100vw;
+    padding: 4rem 2rem;
     background-color: var(--container-color);
     font-family: var(--body-font);
     color: var(--text-color-light);
+    overflow-y: visible;
 }
 
-.result-card {
-    width: 420px; /* adjust as needed */
-    padding: 1rem;
-    background-color: #111; /* optional for better visual contrast */
-    border-radius: 1rem;
-    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    border: none;
-}
 
-.result-card img {
-    width: 100%;
+/* #result img {
+    width: 400px;
     height: auto;
+    border-radius: 0.5rem;
+} */
+
+#result h2 {
+    padding: 0 0 0.5rem 0;
+    font-size: var(--h2-font-size);
+}
+
+#result h3 {
+    padding: 0.5rem 0 0 0;
+    font-size: var(--h3-font-size);
+}
+
+#result p {
+    padding: 0.5rem 0;
+    font-size: var(--normal-font-size);
+}
+
+.city,
+.beach,
+.temple {
+    background-color: hsl(0, 0%, 12%);
+    padding: 1rem;
+    margin: 0.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.city:hover,
+.beach:hover,
+.temple:hover {
+    transform: scale(1.02);
+}
+
+#result img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
     border-radius: 0.5rem;
 }
 
+.result-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideIn 0.5s ease forwards;
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
