@@ -5,27 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Recommendation</title>
     <link rel="stylesheet" href="./travel_recommendation.css">
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    </style>
 </head>
 <body>
-    <nav>
-        <div class="logo">
-            <img src="flight-land-line (1).svg" id="webLogo">
-            <h2>Wander.ly</h2>
-        </div>
-        <div class="pages">
-            <ul>
-                <li><a href="./travel_recommendation.html">Home</a></li>
-                <li><a href="./about.html">About Us</a></li>
-                <li><a href="./contact.html">Contact Us</a></li>
-            </ul>
-        </div>
-        <div class="searchBar">
-            <input type="text" id="searchBar" placeholder="Enter a destination or keyword">
-            <button id="searchBtn">Search</button>
-            <button id="resetBtn">Reset</button>
-        </div>
-    </nav>
-    <div class="main">
+    <header>
+        <nav class="nav container">
+            <div class="logo">
+                <img src="flight-land-line (1).svg" id="webLogo" width="40px">
+                <h2>Wander.ly</h2>
+            </div>
+            <div class="pages">
+                <ul>
+                    <li><a href="./travel_recommendation.html">Home</a></li>
+                    <li><a href="./about.html">About Us</a></li>
+                    <li><a href="./contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="searchBar">
+                <input type="text" id="searchBar" placeholder="Enter a destination or keyword">
+                <button id="searchBtn">Search</button>
+                <button id="resetBtn">Reset</button>
+            </div>
+        </nav>
+    </header>
+    <main class="main">
+        <img src="background.jpeg" class="main-bg">
+        <div class="main-shadow"></div>
         <h1>Explore Dream Destination</h1>
         <p>It encourages exploration of unfamiliar territories, embracing diverse cultures and landscapes,
             while pursuing the desired destination that captivates the heart and ignites a sense of wonder
@@ -37,7 +44,7 @@
         <div id="result">
 
         </div>
-    </div>
+    </main>
     <script src="./travel_recommendation.js"></script>
 </body>
 </html>
