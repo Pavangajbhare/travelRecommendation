@@ -320,3 +320,14 @@ main {
         transform: translateY(0);
     }
 }
+
+.team {
+    margin: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.items {
+    padding: 1rem;
+}
