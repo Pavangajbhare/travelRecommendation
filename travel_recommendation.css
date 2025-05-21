@@ -188,6 +188,24 @@ main {
     flex-direction: row;
     overflow-y: hidden;
 }
+
+.social {
+    display: flex;
+    flex-direction: column;
+    min-width: 40px;
+    max-width: 40px;
+    margin-left: 1rem;
+    padding: 0.5rem;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.social img {
+    width: 30px;
+}
+
 .main-bg {
     display: block;
     position: absolute;
@@ -227,18 +245,19 @@ main {
 }
 
 #book {
-    height: 10rem;
-    width: 10rem;
+    margin: 1rem 3rem;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     color: var(--title-color);
     padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 #book:hover {
-    background: radial-gradient(ellipse closest-side at center, hsla(0, 0%, 100%, 0.614), hsla(0, 0%, 100%, 0)60%);
-    font-style: italic;
+    background-color: hsla(0, 0%, 12%, 0.947);
 }
 
 
@@ -321,7 +340,7 @@ main {
     }
 }
 
-.team, .form{
+.team {
     margin: 5rem 3rem 0 0;
     min-width: 500px;
     background-color: hsla(0, 0%, 8%, 0.4);
@@ -384,7 +403,9 @@ main {
   grid-template-rows: 1fr auto;
   gap: 2rem;
   width: max-content;
-  margin: 3rem auto;
+  height: max-content;
+  margin: 3rem 1rem;
+  margin-left: 1rem;
   padding: 2rem;
   background-color: hsla(0, 0%, 100%, 0.05);
   border-radius: 1rem;
