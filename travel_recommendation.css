@@ -321,14 +321,13 @@ main {
     }
 }
 
-.team {
-    margin-top: 5rem;
-    margin-right: 5rem;
+.team, .form{
+    margin: 5rem 3rem 0 0;
+    min-width: 500px;
     background-color: hsla(0, 0%, 8%, 0.4);
     padding: 1rem;
     border-radius: 1rem;
-    width: 60%;
-    max-height: 60%;
+    height: max-content;
     display: grid;
     grid-template-rows: auto 1fr;
     grid-template-columns: 1fr 1fr 1fr;
@@ -353,16 +352,24 @@ main {
 }
 
 .items:hover {
-    background-color: hsl(0, 0%, 12%);
+    background-color: hsla(0, 0%, 12%, 0.699);
     transform: translateY(-0.5rem);
 }
 
+.items img {
+    justify-self: center;
+    width: 80px;
+    height: 60px;
+}
+
 .items h3 {
+    justify-self: center;
+    text-align: center;
     padding-bottom: 1rem;
 }
 
 .items p {
-    text-align: justify;
+    text-align: left;
 }
 
 .items span {
@@ -370,4 +377,65 @@ main {
     font-weight: var(--font-strong);
     padding-top: 2rem;
     align-self: end;
+}
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+  grid-template-rows: 1fr auto;
+  gap: 2rem;
+  width: max-content;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: hsla(0, 0%, 100%, 0.05);
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-item label {
+  align-self: start;
+  font-weight: 600;
+  color: #fff;
+}
+
+.form-item input,
+.form-item textarea {
+  width: max-content;
+  background-color: transparent;
+  align-self: start;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  resize: vertical;
+  border-bottom: 2px solid hsla(0, 0%, 100%, 0.05);
+  border-left: 1px solid hsla(0, 0%, 100%, 0.05);
+}
+
+.form-item input:hover,
+.form-item textarea:hover {
+    background-color: hsla(0, 0%, 100%, 0.05);
+}
+
+#form_submit {
+  justify-self: center;
+  align-self: center;
+  padding: 0.75rem 2rem;
+  background-color: hsla(0, 0%, 12%, 0.509);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#form_submit:hover {
+  background-color: hsla(0, 0%, 12%, 0.9);
 }
